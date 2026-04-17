@@ -1,0 +1,11 @@
+{
+  "rule_based": {
+    "n_occupations": 682,
+    "score_min": 0.0,
+    "score_mean": 0.517003685420009,
+    "score_max": 1.0,
+    "green_share": 0.3343108504398827,
+    "yellow_share": 0.33724340175953077,
+    "red_share": 0.3284457478005865
+  }
+}

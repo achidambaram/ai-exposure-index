@@ -1,0 +1,683 @@
+soc_code,occupation_title,predicted_exposure,risk_band
+11-1011,Chief Executives,0.9106677462373388,Red
+11-1021,General and Operations Managers,0.7545275597921347,Red
+11-2011,Advertising and Promotions Managers,0.8922901637055671,Red
+11-2021,Marketing Managers,0.902449504076568,Red
+11-2022,Sales Managers,0.9080637357545068,Red
+11-3021,Computer and Information Systems Managers,0.7914655531847955,Red
+11-3031,Financial Managers,0.9382380031996942,Red
+11-3051,Industrial Production Managers,0.6160782844618361,Yellow
+11-3061,Purchasing Managers,0.9458038358947268,Red
+11-3071,"Transportation, Storage, and Distribution Managers",0.8532859319660824,Red
+11-3111,Compensation and Benefits Managers,0.926962204531554,Red
+11-3121,Human Resources Managers,0.9164263768128152,Red
+11-3131,Training and Development Managers,0.8873147756052879,Red
+11-9013,"Farmers, Ranchers, and Other Agricultural Managers",0.4371331112335845,Yellow
+11-9021,Construction Managers,0.5956637959283771,Yellow
+11-9031,"Education and Childcare Administrators, Preschool and Daycare",0.671225623409576,Red
+11-9032,"Education Administrators, Kindergarten through Secondary",0.8290624868114278,Red
+11-9033,"Education Administrators, Postsecondary",0.9637307652169796,Red
+11-9041,Architectural and Engineering Managers,0.7202442549927837,Red
+11-9051,Food Service Managers,0.4866612157723021,Yellow
+11-9071,Gambling Managers,0.6788199159836554,Red
+11-9081,Lodging Managers,0.5608304148272273,Yellow
+11-9111,Medical and Health Services Managers,0.8720450877642704,Red
+11-9121,Natural Sciences Managers,0.860414148806396,Red
+11-9131,Postmasters and Mail Superintendents,0.6958999985760491,Red
+11-9141,"Property, Real Estate, and Community Association Managers",0.9017641569304266,Red
+11-9151,Social and Community Service Managers,0.8053358227529183,Red
+11-9161,Emergency Management Directors,0.7230662426531255,Red
+11-9199,"Managers, All Other",0.7416128785713262,Red
+13-1011,"Agents and Business Managers of Artists, Performers, and Athletes",0.8938146998969606,Red
+13-1021,"Buyers and Purchasing Agents, Farm Products",0.6861489211496422,Red
+13-1022,"Wholesale and Retail Buyers, Except Farm Products",0.6733233833912855,Red
+13-1023,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",0.9420321826045543,Red
+13-1031,"Claims Adjusters, Examiners, and Investigators",0.8513046388025588,Red
+13-1032,"Insurance Appraisers, Auto Damage",0.625154257196768,Yellow
+13-1041,Compliance Officers,0.7031283507230465,Red
+13-1051,Cost Estimators,0.9360888287388572,Red
+13-1071,Human Resources Specialists,0.8950737541162773,Red
+13-1074,Farm Labor Contractors,0.4037227691553177,Yellow
+13-1075,Labor Relations Specialists,0.9550885440745476,Red
+13-1081,Logisticians,0.9182398435403556,Red
+13-1111,Management Analysts,0.9342750198497146,Red
+13-1121,"Meeting, Convention, and Event Planners",0.5721106634301489,Yellow
+13-1131,Fundraisers,0.9137688726897336,Red
+13-1141,"Compensation, Benefits, and Job Analysis Specialists",0.9049863786365514,Red
+13-1151,Training and Development Specialists,0.9069344799332618,Red
+13-1161,Market Research Analysts and Marketing Specialists,0.94442788300833,Red
+13-1199,"Business Operations Specialists, All Other",0.8080736352539889,Red
+13-2011,Accountants and Auditors,0.9264390939427024,Red
+13-2031,Budget Analysts,0.8975997618179911,Red
+13-2041,Credit Analysts,0.929679590292044,Red
+13-2052,Personal Financial Advisors,0.9570946418737704,Red
+13-2053,Insurance Underwriters,0.8811326169291261,Red
+13-2061,Financial Examiners,0.9664251933987612,Red
+13-2071,Credit Counselors,0.9022760049432728,Red
+13-2072,Loan Officers,0.8729661554512322,Red
+13-2081,"Tax Examiners and Collectors, and Revenue Agents",0.8729214034573185,Red
+13-2082,Tax Preparers,0.9165494632401336,Red
+13-2099,"Financial Specialists, All Other",0.8961557526835653,Red
+15-2011,Actuaries,0.961994987176163,Red
+15-2021,Mathematicians,0.973122580426924,Red
+15-2031,Operations Research Analysts,0.9645165626584168,Red
+15-2041,Statisticians,0.933520947083493,Red
+17-1011,"Architects, Except Landscape and Naval",0.8201610051691253,Red
+17-1012,Landscape Architects,0.7912764788694422,Red
+17-1021,Cartographers and Photogrammetrists,0.7295464049060219,Red
+17-1022,Surveyors,0.5262630793573739,Yellow
+17-2011,Aerospace Engineers,0.9252879231029352,Red
+17-2021,Agricultural Engineers,0.6678750583199665,Red
+17-2031,Bioengineers and Biomedical Engineers,0.7912733242685869,Red
+17-2041,Chemical Engineers,0.8868159822623478,Red
+17-2051,Civil Engineers,0.907521140432117,Red
+17-2061,Computer Hardware Engineers,0.8202094390088006,Red
+17-2071,Electrical Engineers,0.8063275944503986,Red
+17-2072,"Electronics Engineers, Except Computer",0.7027169299589999,Red
+17-2081,Environmental Engineers,0.936562649822718,Red
+17-2111,"Health and Safety Engineers, Except Mining Safety Engineers and Inspectors",0.7722274474943048,Red
+17-2112,Industrial Engineers,0.740812383214452,Red
+17-2121,Marine Engineers and Naval Architects,0.5212239737977958,Yellow
+17-2131,Materials Engineers,0.757815939795389,Red
+17-2141,Mechanical Engineers,0.7826305649985934,Red
+17-2151,"Mining and Geological Engineers, Including Mining Safety Engineers",0.8921870138954158,Red
+17-2161,Nuclear Engineers,0.8892665706519282,Red
+17-2171,Petroleum Engineers,0.9177168663697038,Red
+17-2199,"Engineers, All Other",0.7174026398554882,Red
+17-3011,Architectural and Civil Drafters,0.6475147469803734,Yellow
+17-3012,Electrical and Electronics Drafters,0.7206790569467845,Red
+17-3013,Mechanical Drafters,0.7590672699300978,Red
+17-3021,Aerospace Engineering and Operations Technologists and Technicians,0.5664484570974992,Yellow
+17-3022,Civil Engineering Technologists and Technicians,0.7497467042943419,Red
+17-3023,Electrical and Electronic Engineering Technologists and Technicians,0.5312695403939823,Yellow
+17-3024,Electro-Mechanical and Mechatronics Technologists and Technicians,0.4181659662511066,Yellow
+17-3025,Environmental Engineering Technologists and Technicians,0.4700437106722299,Yellow
+17-3026,Industrial Engineering Technologists and Technicians,0.5627033958491011,Yellow
+17-3027,Mechanical Engineering Technologists and Technicians,0.4440837782531746,Yellow
+17-3029,"Engineering Technologists and Technicians, Except Drafters, All Other",0.4733852771543174,Yellow
+17-3031,Surveying and Mapping Technicians,0.425463889400378,Yellow
+19-1011,Animal Scientists,0.7089115029945539,Red
+19-1012,Food Scientists and Technologists,0.6273626986974137,Yellow
+19-1013,Soil and Plant Scientists,0.5845056065594473,Yellow
+19-1021,Biochemists and Biophysicists,0.7370829311043181,Red
+19-1022,Microbiologists,0.6496014254396456,Yellow
+19-1023,Zoologists and Wildlife Biologists,0.536201499338059,Yellow
+19-1029,"Biological Scientists, All Other",0.749125459643443,Red
+19-1031,Conservation Scientists,0.4949685933166944,Yellow
+19-1032,Foresters,0.4547912366736936,Yellow
+19-1041,Epidemiologists,0.9456233343041958,Red
+19-1042,"Medical Scientists, Except Epidemiologists",0.828686339150619,Red
+19-2011,Astronomers,0.8980538103780027,Red
+19-2012,Physicists,0.9307773029218732,Red
+19-2021,Atmospheric and Space Scientists,0.9257391872667892,Red
+19-2031,Chemists,0.6304037457096343,Yellow
+19-2032,Materials Scientists,0.8408421921694401,Red
+19-2041,"Environmental Scientists and Specialists, Including Health",0.804047660373285,Red
+19-2042,"Geoscientists, Except Hydrologists and Geographers",0.6492413907156631,Yellow
+19-2043,Hydrologists,0.6103534043198701,Yellow
+19-2099,"Physical Scientists, All Other",0.8300258103167772,Red
+19-3011,Economists,0.9610676938130563,Red
+19-3022,Survey Researchers,0.9563537930078172,Red
+19-3032,Industrial-Organizational Psychologists,0.973189557690595,Red
+19-3039,"Psychologists, All Other",0.8338181857888094,Red
+19-3041,Sociologists,0.9583610886863612,Red
+19-3051,Urban and Regional Planners,0.8845687381563156,Red
+19-3091,Anthropologists and Archeologists,0.7490028015097866,Red
+19-3092,Geographers,0.9170133917321216,Red
+19-3093,Historians,0.8918598406253955,Red
+19-3094,Political Scientists,0.9596433415408112,Red
+19-3099,"Social Scientists and Related Workers, All Other",0.910192927336388,Red
+19-4021,Biological Technicians,0.5298311986655752,Yellow
+19-4031,Chemical Technicians,0.4949942037098775,Yellow
+19-4051,Nuclear Technicians,0.4817178903952714,Yellow
+19-4061,Social Science Research Assistants,0.8759754430966054,Red
+19-4092,Forensic Science Technicians,0.4919371251302078,Yellow
+19-4099,"Life, Physical, and Social Science Technicians, All Other",0.6291285852749391,Yellow
+21-1011,Substance Abuse and Behavioral Disorder Counselors,0.6525403014843608,Yellow
+21-1012,"Educational, Guidance, and Career Counselors and Advisors",0.9499314120876516,Red
+21-1013,Marriage and Family Therapists,0.9116885471814588,Red
+21-1014,Mental Health Counselors,0.8391594200599364,Red
+21-1015,Rehabilitation Counselors,0.7990018470786542,Red
+21-1021,"Child, Family, and School Social Workers",0.6514634290170696,Yellow
+21-1022,Healthcare Social Workers,0.7405078507826264,Red
+21-1023,Mental Health and Substance Abuse Social Workers,0.8018893018063705,Red
+21-1091,Health Education Specialists,0.665812726851569,Red
+21-1092,Probation Officers and Correctional Treatment Specialists,0.52637216717072,Yellow
+21-1093,Social and Human Service Assistants,0.6539943753242797,Yellow
+21-1094,Community Health Workers,0.4928738173737697,Yellow
+21-2011,Clergy,0.9358590049119316,Red
+21-2021,"Directors, Religious Activities and Education",0.8532306729215062,Red
+23-1011,Lawyers,0.9410814714022024,Red
+23-1012,Judicial Law Clerks,0.915000602738818,Red
+23-1021,"Administrative Law Judges, Adjudicators, and Hearing Officers",0.9256843475947212,Red
+23-1022,"Arbitrators, Mediators, and Conciliators",0.946622552582152,Red
+23-1023,"Judges, Magistrate Judges, and Magistrates",1.0,Red
+23-2011,Paralegals and Legal Assistants,0.8573984610258008,Red
+23-2093,"Title Examiners, Abstractors, and Searchers",0.8653420141067705,Red
+25-1011,"Business Teachers, Postsecondary",0.9344316089978384,Red
+25-1021,"Computer Science Teachers, Postsecondary",0.8944727792358566,Red
+25-1022,"Mathematical Science Teachers, Postsecondary",0.9360187575325098,Red
+25-1031,"Architecture Teachers, Postsecondary",0.8848136338082431,Red
+25-1032,"Engineering Teachers, Postsecondary",0.921580190640321,Red
+25-1041,"Agricultural Sciences Teachers, Postsecondary",0.637194167146535,Yellow
+25-1042,"Biological Science Teachers, Postsecondary",0.8735288719376713,Red
+25-1043,"Forestry and Conservation Science Teachers, Postsecondary",0.7416764933836347,Red
+25-1051,"Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary",0.9016190601179468,Red
+25-1052,"Chemistry Teachers, Postsecondary",0.915084210921261,Red
+25-1053,"Environmental Science Teachers, Postsecondary",0.9327594421892044,Red
+25-1054,"Physics Teachers, Postsecondary",0.7997408216497304,Red
+25-1061,"Anthropology and Archeology Teachers, Postsecondary",0.8831566999914845,Red
+25-1062,"Area, Ethnic, and Cultural Studies Teachers, Postsecondary",0.9410696297126094,Red
+25-1063,"Economics Teachers, Postsecondary",0.9311021448100966,Red
+25-1064,"Geography Teachers, Postsecondary",0.9351640799926044,Red
+25-1065,"Political Science Teachers, Postsecondary",0.9504237379486437,Red
+25-1066,"Psychology Teachers, Postsecondary",0.9289361841307796,Red
+25-1067,"Sociology Teachers, Postsecondary",0.9313458870637726,Red
+25-1071,"Health Specialties Teachers, Postsecondary",0.7019212022007834,Red
+25-1072,"Nursing Instructors and Teachers, Postsecondary",0.5915909994252665,Yellow
+25-1081,"Education Teachers, Postsecondary",0.8604168941745219,Red
+25-1082,"Library Science Teachers, Postsecondary",0.9260939470957328,Red
+25-1111,"Criminal Justice and Law Enforcement Teachers, Postsecondary",0.9501745267384912,Red
+25-1112,"Law Teachers, Postsecondary",0.9331688365964428,Red
+25-1113,"Social Work Teachers, Postsecondary",0.9283631868377582,Red
+25-1121,"Art, Drama, and Music Teachers, Postsecondary",0.6799543246669522,Red
+25-1122,"Communications Teachers, Postsecondary",0.936718967517779,Red
+25-1123,"English Language and Literature Teachers, Postsecondary",0.9737550422336994,Red
+25-1124,"Foreign Language and Literature Teachers, Postsecondary",0.9490984540956514,Red
+25-1125,"History Teachers, Postsecondary",0.9731391390754772,Red
+25-1126,"Philosophy and Religion Teachers, Postsecondary",0.945328916357982,Red
+25-1192,"Family and Consumer Sciences Teachers, Postsecondary",0.8847843909014967,Red
+25-1193,"Recreation and Fitness Studies Teachers, Postsecondary",0.8103428446140344,Red
+25-1194,"Career/Technical Education Teachers, Postsecondary",0.492676862007031,Yellow
+25-2011,"Preschool Teachers, Except Special Education",0.5049681739828565,Yellow
+25-2012,"Kindergarten Teachers, Except Special Education",0.567853986217562,Yellow
+25-2021,"Elementary School Teachers, Except Special Education",0.6931549571638176,Red
+25-2022,"Middle School Teachers, Except Special and Career/Technical Education",0.8762977320515383,Red
+25-2023,"Career/Technical Education Teachers, Middle School",0.5983889272755295,Yellow
+25-2031,"Secondary School Teachers, Except Special and Career/Technical Education",0.8631859281363867,Red
+25-2032,"Career/Technical Education Teachers, Secondary School",0.5565972194456481,Yellow
+25-2051,"Special Education Teachers, Preschool",0.5595101383907951,Yellow
+25-2059,"Special Education Teachers, All Other",0.3535888546413789,Yellow
+25-3011,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",0.9354068647074452,Red
+25-3021,Self-Enrichment Teachers,0.6008538480770103,Yellow
+25-4011,Archivists,0.6325703380019039,Yellow
+25-4012,Curators,0.6585215751863183,Yellow
+25-4013,Museum Technicians and Conservators,0.4564640963427399,Yellow
+25-4031,Library Technicians,0.4737803065447541,Yellow
+25-9021,Farm and Home Management Educators,0.6509042156312153,Yellow
+25-9031,Instructional Coordinators,0.9024956563386616,Red
+27-1011,Art Directors,0.7997250806995447,Red
+27-1012,Craft Artists,0.314200608182073,Green
+27-1013,"Fine Artists, Including Painters, Sculptors, and Illustrators",0.3500174277769222,Yellow
+27-1014,Special Effects Artists and Animators,0.7125887628748622,Red
+27-1021,Commercial and Industrial Designers,0.7448048362185579,Red
+27-1022,Fashion Designers,0.6204799225086944,Yellow
+27-1023,Floral Designers,0.4008803806636006,Yellow
+27-1024,Graphic Designers,0.7455401974382561,Red
+27-1025,Interior Designers,0.8610876225871481,Red
+27-1026,Merchandise Displayers and Window Trimmers,0.2805488269698455,Green
+27-1027,Set and Exhibit Designers,0.5938124176236581,Yellow
+27-2011,Actors,0.5179746081069697,Yellow
+27-2012,Producers and Directors,0.7438023382559679,Red
+27-2021,Athletes and Sports Competitors,0.1375339918298396,Green
+27-2022,Coaches and Scouts,0.4899178475119013,Yellow
+27-2023,"Umpires, Referees, and Other Sports Officials",0.4583295211377894,Yellow
+27-2031,Dancers,0.0,Green
+27-2032,Choreographers,0.1767421702666209,Green
+27-2041,Music Directors and Composers,0.542548368449853,Yellow
+27-2042,Musicians and Singers,0.4493512139668353,Yellow
+27-3011,Broadcast Announcers and Radio Disc Jockeys,0.741590691239453,Red
+27-3031,Public Relations Specialists,0.9128641646675258,Red
+27-3041,Editors,0.824100213624334,Red
+27-3042,Technical Writers,0.8527683079216017,Red
+27-3043,Writers and Authors,0.7914667827634769,Red
+27-3091,Interpreters and Translators,0.7464033241657423,Red
+27-4011,Audio and Video Technicians,0.4764129453964215,Yellow
+27-4012,Broadcast Technicians,0.4899780875379386,Yellow
+27-4014,Sound Engineering Technicians,0.6065816332748933,Yellow
+27-4021,Photographers,0.4309632259338171,Yellow
+27-4031,"Camera Operators, Television, Video, and Film",0.3817034420158767,Yellow
+27-4032,Film and Video Editors,0.7678929255112732,Red
+29-1011,Chiropractors,0.4299139731378176,Yellow
+29-1021,"Dentists, General",0.4652219490420323,Yellow
+29-1022,Oral and Maxillofacial Surgeons,0.4605944569766772,Yellow
+29-1023,Orthodontists,0.5688500511700203,Yellow
+29-1024,Prosthodontists,0.457653686985678,Yellow
+29-1031,Dietitians and Nutritionists,0.9154771236523264,Red
+29-1041,Optometrists,0.663577480594713,Red
+29-1051,Pharmacists,0.6136880479713535,Yellow
+29-1071,Physician Assistants,0.4903561312479599,Yellow
+29-1081,Podiatrists,0.6174872154274951,Yellow
+29-1122,Occupational Therapists,0.5269190391878634,Yellow
+29-1123,Physical Therapists,0.3866333839085027,Yellow
+29-1124,Radiation Therapists,0.430067716054188,Yellow
+29-1125,Recreational Therapists,0.4073848590614187,Yellow
+29-1126,Respiratory Therapists,0.4282593715631468,Yellow
+29-1127,Speech-Language Pathologists,0.8632002982631677,Red
+29-1128,Exercise Physiologists,0.4593809255197358,Yellow
+29-1131,Veterinarians,0.4783736789767746,Yellow
+29-1141,Registered Nurses,0.5380795554804603,Yellow
+29-1151,Nurse Anesthetists,0.5244847361289104,Yellow
+29-1161,Nurse Midwives,0.5236650625402327,Yellow
+29-1171,Nurse Practitioners,0.5315756976882187,Yellow
+29-1181,Audiologists,0.6930336769942468,Red
+29-2011,Medical and Clinical Laboratory Technologists,0.5463817258041409,Yellow
+29-2012,Medical and Clinical Laboratory Technicians,0.4266507964545609,Yellow
+29-2031,Cardiovascular Technologists and Technicians,0.4676759634391452,Yellow
+29-2032,Diagnostic Medical Sonographers,0.4270590960545512,Yellow
+29-2033,Nuclear Medicine Technologists,0.5018700506069765,Yellow
+29-2034,Radiologic Technologists and Technicians,0.4064228078563791,Yellow
+29-2035,Magnetic Resonance Imaging Technologists,0.4604188372102831,Yellow
+29-2051,Dietetic Technicians,0.4541309989775005,Yellow
+29-2052,Pharmacy Technicians,0.4813236415057856,Yellow
+29-2053,Psychiatric Technicians,0.4197844812304778,Yellow
+29-2055,Surgical Technologists,0.391783104545313,Yellow
+29-2056,Veterinary Technologists and Technicians,0.406323696422929,Yellow
+29-2057,Ophthalmic Medical Technicians,0.5097850207352156,Yellow
+29-2061,Licensed Practical and Licensed Vocational Nurses,0.375265788936617,Yellow
+29-2081,"Opticians, Dispensing",0.5695504396067801,Yellow
+29-2091,Orthotists and Prosthetists,0.4880054779927539,Yellow
+29-2092,Hearing Aid Specialists,0.6761064536027442,Red
+29-2099,"Health Technologists and Technicians, All Other",0.5643012020743182,Yellow
+29-9091,Athletic Trainers,0.3845449384253241,Yellow
+29-9092,Genetic Counselors,0.985708939864144,Red
+29-9099,"Healthcare Practitioners and Technical Workers, All Other",0.5182590631667188,Yellow
+31-2011,Occupational Therapy Assistants,0.3675218433392783,Yellow
+31-2012,Occupational Therapy Aides,0.3088489656068259,Green
+31-2021,Physical Therapist Assistants,0.3578617506919169,Yellow
+31-2022,Physical Therapist Aides,0.3068642075131159,Green
+31-9011,Massage Therapists,0.179708990894269,Green
+31-9091,Dental Assistants,0.395285043342577,Yellow
+31-9092,Medical Assistants,0.5145425178402665,Yellow
+31-9093,Medical Equipment Preparers,0.3280506558653089,Green
+31-9094,Medical Transcriptionists,0.7708575974991333,Red
+31-9095,Pharmacy Aides,0.4502448977659626,Yellow
+31-9096,Veterinary Assistants and Laboratory Animal Caretakers,0.3168441219301037,Green
+31-9097,Phlebotomists,0.4160390341723484,Yellow
+31-9099,"Healthcare Support Workers, All Other",0.579054805536895,Yellow
+33-1011,First-Line Supervisors of Correctional Officers,0.3531621514610126,Yellow
+33-1012,First-Line Supervisors of Police and Detectives,0.4293447358179686,Yellow
+33-1021,First-Line Supervisors of Firefighting and Prevention Workers,0.3099596668912414,Green
+33-2011,Firefighters,0.2156498100212606,Green
+33-2021,Fire Inspectors and Investigators,0.4650278362809351,Yellow
+33-2022,Forest Fire Inspectors and Prevention Specialists,0.416942179613239,Yellow
+33-3011,Bailiffs,0.369286967347503,Yellow
+33-3012,Correctional Officers and Jailers,0.2897913172822776,Green
+33-3021,Detectives and Criminal Investigators,0.582890801818861,Yellow
+33-3031,Fish and Game Wardens,0.3803826806234516,Yellow
+33-3041,Parking Enforcement Workers,0.3382690304560098,Yellow
+33-3051,Police and Sheriff's Patrol Officers,0.3773141370783325,Yellow
+33-3052,Transit and Railroad Police,0.3077349645064164,Green
+33-9011,Animal Control Workers,0.3318861362610705,Yellow
+33-9021,Private Detectives and Investigators,0.6682268553140334,Red
+33-9031,Gambling Surveillance Officers and Gambling Investigators,0.6335336532870106,Yellow
+33-9032,Security Guards,0.3859604445729003,Yellow
+33-9091,Crossing Guards and Flaggers,0.3536327096104461,Yellow
+33-9092,"Lifeguards, Ski Patrol, and Other Recreational Protective Service Workers",0.347623582721788,Yellow
+33-9093,Transportation Security Screeners,0.3554148702435755,Yellow
+33-9099,"Protective Service Workers, All Other",0.4941687000288623,Yellow
+35-1011,Chefs and Head Cooks,0.3984076237267451,Yellow
+35-1012,First-Line Supervisors of Food Preparation and Serving Workers,0.4462153108921627,Yellow
+35-2011,"Cooks, Fast Food",0.3260537197291542,Green
+35-2012,"Cooks, Institution and Cafeteria",0.3462953547505756,Yellow
+35-2013,"Cooks, Private Household",0.3259598358762093,Green
+35-2014,"Cooks, Restaurant",0.2835851192716056,Green
+35-2015,"Cooks, Short Order",0.3153883145837697,Green
+35-2021,Food Preparation Workers,0.2601237687205585,Green
+35-3011,Bartenders,0.3587456907095044,Yellow
+35-3031,Waiters and Waitresses,0.2889507363098968,Green
+35-3041,"Food Servers, Nonrestaurant",0.3209575361515742,Green
+35-9011,Dining Room and Cafeteria Attendants and Bartender Helpers,0.1256834463329372,Green
+35-9021,Dishwashers,0.1275279471040854,Green
+35-9031,"Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",0.4773818372492048,Yellow
+37-1011,First-Line Supervisors of Housekeeping and Janitorial Workers,0.3561355441299884,Yellow
+37-1012,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",0.3471982305776514,Yellow
+37-2011,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",0.1885212197954571,Green
+37-2012,Maids and Housekeeping Cleaners,0.1799374224463096,Green
+37-2021,Pest Control Workers,0.3236398942361733,Green
+37-3011,Landscaping and Groundskeeping Workers,0.1259354180121219,Green
+37-3012,"Pesticide Handlers, Sprayers, and Applicators, Vegetation",0.3014001227362377,Green
+37-3013,Tree Trimmers and Pruners,0.1368533982655845,Green
+39-2011,Animal Trainers,0.2936737511024214,Green
+39-2021,Animal Caretakers,0.307077261884197,Green
+39-3011,Gambling Dealers,0.4801074675714555,Yellow
+39-3012,Gambling and Sports Book Writers and Runners,0.5832636012512419,Yellow
+39-3021,Motion Picture Projectionists,0.4121393156497006,Yellow
+39-3031,"Ushers, Lobby Attendants, and Ticket Takers",0.4240207284735428,Yellow
+39-3091,Amusement and Recreation Attendants,0.3853417181908175,Yellow
+39-3092,Costume Attendants,0.3725905341050675,Yellow
+39-3093,"Locker Room, Coatroom, and Dressing Room Attendants",0.4048711457912056,Yellow
+39-4011,Embalmers,0.3313524074926378,Yellow
+39-4021,Funeral Attendants,0.3622585671529183,Yellow
+39-4031,"Morticians, Undertakers, and Funeral Arrangers",0.4097470531921463,Yellow
+39-5011,Barbers,0.3369648315243319,Yellow
+39-5012,"Hairdressers, Hairstylists, and Cosmetologists",0.3617482150936987,Yellow
+39-5091,"Makeup Artists, Theatrical and Performance",0.3750430526950872,Yellow
+39-5092,Manicurists and Pedicurists,0.5620854504750332,Yellow
+39-5093,Shampooers,0.3173191860828404,Green
+39-5094,Skincare Specialists,0.4640393656894434,Yellow
+39-6011,Baggage Porters and Bellhops,0.2334414857855751,Green
+39-6012,Concierges,0.780102283163064,Red
+39-7011,Tour Guides and Escorts,0.6654281109209753,Red
+39-7012,Travel Guides,0.5899317259163273,Yellow
+39-9011,Childcare Workers,0.4018411583534161,Yellow
+39-9031,Exercise Trainers and Group Fitness Instructors,0.0919500609394566,Green
+39-9032,Recreation Workers,0.4322568066946333,Yellow
+39-9041,Residential Advisors,0.568744142398799,Yellow
+41-1011,First-Line Supervisors of Retail Sales Workers,0.4883127419538522,Yellow
+41-1012,First-Line Supervisors of Non-Retail Sales Workers,0.8650846238562206,Red
+41-2011,Cashiers,0.4282759262828474,Yellow
+41-2012,Gambling Change Persons and Booth Cashiers,0.4570598367291309,Yellow
+41-2021,Counter and Rental Clerks,0.478011678208099,Yellow
+41-2022,Parts Salespersons,0.4564632257557312,Yellow
+41-2031,Retail Salespersons,0.5073038841876001,Yellow
+41-3011,Advertising Sales Agents,0.8417087472551722,Red
+41-3021,Insurance Sales Agents,0.9166705962480904,Red
+41-3031,"Securities, Commodities, and Financial Services Sales Agents",0.926987805528454,Red
+41-3041,Travel Agents,0.8248212870309684,Red
+41-4011,"Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products",0.8370220954406673,Red
+41-4012,"Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",0.6131117764440164,Yellow
+41-9011,Demonstrators and Product Promoters,0.504460546002541,Yellow
+41-9012,Models,0.2307657553350474,Green
+41-9021,Real Estate Brokers,0.8628396945533585,Red
+41-9022,Real Estate Sales Agents,0.6863891960694722,Red
+41-9031,Sales Engineers,0.8545302543247792,Red
+41-9041,Telemarketers,0.8581289288426227,Red
+41-9091,"Door-to-Door Sales Workers, News and Street Vendors, and Related Workers",0.8301269238821012,Red
+43-1011,First-Line Supervisors of Office and Administrative Support Workers,0.7665687782225598,Red
+43-2011,"Switchboard Operators, Including Answering Service",0.7754504863135951,Red
+43-2021,Telephone Operators,0.7707513321393885,Red
+43-3011,Bill and Account Collectors,0.8896778642220003,Red
+43-3021,Billing and Posting Clerks,0.8072945316524629,Red
+43-3031,"Bookkeeping, Accounting, and Auditing Clerks",0.8139740479458292,Red
+43-3041,Gambling Cage Workers,0.5396312384482624,Yellow
+43-3051,Payroll and Timekeeping Clerks,0.8322145784439596,Red
+43-3061,Procurement Clerks,0.8230979323556936,Red
+43-3071,Tellers,0.589027769579852,Yellow
+43-4011,Brokerage Clerks,0.8582903063094353,Red
+43-4021,Correspondence Clerks,0.8963584430285414,Red
+43-4031,"Court, Municipal, and License Clerks",0.7617401310588542,Red
+43-4041,"Credit Authorizers, Checkers, and Clerks",0.8658964362271585,Red
+43-4051,Customer Service Representatives,0.7711665875951881,Red
+43-4061,"Eligibility Interviewers, Government Programs",0.8602531658542478,Red
+43-4071,File Clerks,0.5357535616482526,Yellow
+43-4081,"Hotel, Motel, and Resort Desk Clerks",0.6386637953232448,Yellow
+43-4111,"Interviewers, Except Eligibility and Loan",0.8478775236301735,Red
+43-4121,"Library Assistants, Clerical",0.5267930546277814,Yellow
+43-4131,Loan Interviewers and Clerks,0.8954340232810104,Red
+43-4141,New Accounts Clerks,0.8069682217059623,Red
+43-4151,Order Clerks,0.7956794599746762,Red
+43-4161,"Human Resources Assistants, Except Payroll and Timekeeping",0.9234906087141388,Red
+43-4171,Receptionists and Information Clerks,0.8038224470713909,Red
+43-4181,Reservation and Transportation Ticket Agents and Travel Clerks,0.5338416418708543,Yellow
+43-5011,Cargo and Freight Agents,0.6676401345031634,Red
+43-5021,Couriers and Messengers,0.2700759672640321,Green
+43-5031,Public Safety Telecommunicators,0.6747064316394956,Red
+43-5032,"Dispatchers, Except Police, Fire, and Ambulance",0.8496072364937355,Red
+43-5041,"Meter Readers, Utilities",0.2604557139024214,Green
+43-5051,Postal Service Clerks,0.3734658293878712,Yellow
+43-5052,Postal Service Mail Carriers,0.2556044321631042,Green
+43-5053,"Postal Service Mail Sorters, Processors, and Processing Machine Operators",0.2546351287480049,Green
+43-5061,"Production, Planning, and Expediting Clerks",0.673627065305143,Red
+43-5071,"Shipping, Receiving, and Inventory Clerks",0.3167925911245202,Green
+43-5111,"Weighers, Measurers, Checkers, and Samplers, Recordkeeping",0.4391942181335901,Yellow
+43-6011,Executive Secretaries and Executive Administrative Assistants,0.796206516059112,Red
+43-6012,Legal Secretaries and Administrative Assistants,0.773519318945504,Red
+43-6013,Medical Secretaries and Administrative Assistants,0.8161854119332791,Red
+43-6014,"Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",0.817496908666624,Red
+43-9021,Data Entry Keyers,0.578895353542044,Yellow
+43-9022,Word Processors and Typists,0.7113939613096137,Red
+43-9031,Desktop Publishers,0.6264930402775807,Yellow
+43-9041,Insurance Claims and Policy Processing Clerks,0.7737396313569359,Red
+43-9051,"Mail Clerks and Mail Machine Operators, Except Postal Service",0.3116124636814448,Green
+43-9061,"Office Clerks, General",0.7757307968642785,Red
+43-9071,"Office Machine Operators, Except Computer",0.3798772543329698,Yellow
+43-9081,Proofreaders and Copy Markers,0.8645949431276717,Red
+43-9111,Statistical Assistants,0.8951036815574072,Red
+45-1011,"First-Line Supervisors of Farming, Fishing, and Forestry Workers",0.3357371865848826,Yellow
+45-2011,Agricultural Inspectors,0.5025111718676577,Yellow
+45-2021,Animal Breeders,0.2620404605998094,Green
+45-2041,"Graders and Sorters, Agricultural Products",0.2022544168432036,Green
+45-2091,Agricultural Equipment Operators,0.2444448247191059,Green
+45-2092,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",0.0621851993032154,Green
+45-2093,"Farmworkers, Farm, Ranch, and Aquacultural Animals",0.2552788148317015,Green
+45-4011,Forest and Conservation Workers,0.2406397788391883,Green
+45-4021,Fallers,0.1301624075144782,Green
+45-4022,Logging Equipment Operators,0.2708686755851964,Green
+45-4023,Log Graders and Scalers,0.3655309437629815,Yellow
+47-1011,First-Line Supervisors of Construction Trades and Extraction Workers,0.3972407847752718,Yellow
+47-2011,Boilermakers,0.2614288123880414,Green
+47-2021,Brickmasons and Blockmasons,0.1341902377542846,Green
+47-2022,Stonemasons,0.1461192131564985,Green
+47-2031,Carpenters,0.2412271390019957,Green
+47-2041,Carpet Installers,0.173048345016981,Green
+47-2042,"Floor Layers, Except Carpet, Wood, and Hard Tiles",0.2250349491933038,Green
+47-2043,Floor Sanders and Finishers,0.1146648921320315,Green
+47-2044,Tile and Stone Setters,0.2248191764900575,Green
+47-2051,Cement Masons and Concrete Finishers,0.1362135155887715,Green
+47-2053,Terrazzo Workers and Finishers,0.1256190698239963,Green
+47-2061,Construction Laborers,0.1394948187186879,Green
+47-2071,"Paving, Surfacing, and Tamping Equipment Operators",0.2153445046387357,Green
+47-2072,Pile Driver Operators,0.2297093315360902,Green
+47-2073,Operating Engineers and Other Construction Equipment Operators,0.2937267698156069,Green
+47-2081,Drywall and Ceiling Tile Installers,0.1490207863621407,Green
+47-2082,Tapers,0.1861586005883214,Green
+47-2111,Electricians,0.2917344525625154,Green
+47-2121,Glaziers,0.1986417536511736,Green
+47-2131,"Insulation Workers, Floor, Ceiling, and Wall",0.1657690542484652,Green
+47-2132,"Insulation Workers, Mechanical",0.2046704356260442,Green
+47-2141,"Painters, Construction and Maintenance",0.1609037570548013,Green
+47-2142,Paperhangers,0.151044095654536,Green
+47-2151,Pipelayers,0.2213769005778379,Green
+47-2152,"Plumbers, Pipefitters, and Steamfitters",0.2594720990788677,Green
+47-2161,Plasterers and Stucco Masons,0.1297002270820817,Green
+47-2171,Reinforcing Iron and Rebar Workers,0.0946387850068754,Green
+47-2181,Roofers,0.1268391740500446,Green
+47-2211,Sheet Metal Workers,0.2468056940656753,Green
+47-2221,Structural Iron and Steel Workers,0.1334030282142514,Green
+47-2231,Solar Photovoltaic Installers,0.2701182066984835,Green
+47-3011,"Helpers--Brickmasons, Blockmasons, Stonemasons, and Tile and Marble Setters",0.108831927157121,Green
+47-3012,Helpers--Carpenters,0.1948081744139042,Green
+47-3013,Helpers--Electricians,0.1846404920533924,Green
+47-3014,"Helpers--Painters, Paperhangers, Plasterers, and Stucco Masons",0.0943224125382573,Green
+47-3015,"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters",0.1484642099776815,Green
+47-3016,Helpers--Roofers,0.1313432447440151,Green
+47-4011,Construction and Building Inspectors,0.5193727626774399,Yellow
+47-4021,Elevator and Escalator Installers and Repairers,0.2878204324154896,Green
+47-4031,Fence Erectors,0.1081946310115737,Green
+47-4041,Hazardous Materials Removal Workers,0.3397875889153497,Yellow
+47-4051,Highway Maintenance Workers,0.2294518027790551,Green
+47-4061,Rail-Track Laying and Maintenance Equipment Operators,0.2017829170622131,Green
+47-4071,Septic Tank Servicers and Sewer Pipe Cleaners,0.2285867750162082,Green
+47-4091,Segmental Pavers,0.2830164552053514,Green
+47-4099,"Construction and Related Workers, All Other",0.2749439368088231,Green
+47-5011,"Derrick Operators, Oil and Gas",0.2061203953312941,Green
+47-5012,"Rotary Drill Operators, Oil and Gas",0.320818116431223,Green
+47-5013,"Service Unit Operators, Oil and Gas",0.2759886518938705,Green
+47-5041,Continuous Mining Machine Operators,0.2377917572771883,Green
+47-5051,"Rock Splitters, Quarry",0.1493264918019053,Green
+47-5071,"Roustabouts, Oil and Gas",0.1814581726614938,Green
+47-5081,Helpers--Extraction Workers,0.1797966088168889,Green
+49-1011,"First-Line Supervisors of Mechanics, Installers, and Repairers",0.4593824357236998,Yellow
+49-2011,"Computer, Automated Teller, and Office Machine Repairers",0.4013841040394851,Yellow
+49-2021,"Radio, Cellular, and Tower Equipment Installers and Repairers",0.2985248558678121,Green
+49-2022,"Telecommunications Equipment Installers and Repairers, Except Line Installers",0.3053463148805775,Green
+49-2091,Avionics Technicians,0.4398858942026658,Yellow
+49-2092,"Electric Motor, Power Tool, and Related Repairers",0.3076992106634476,Green
+49-2093,"Electrical and Electronics Installers and Repairers, Transportation Equipment",0.3039405061701564,Green
+49-2094,"Electrical and Electronics Repairers, Commercial and Industrial Equipment",0.3875552904737454,Yellow
+49-2095,"Electrical and Electronics Repairers, Powerhouse, Substation, and Relay",0.3620113213743751,Yellow
+49-2096,"Electronic Equipment Installers and Repairers, Motor Vehicles",0.3227288777599486,Green
+49-2097,Audiovisual Equipment Installers and Repairers,0.3634326366495588,Yellow
+49-2098,Security and Fire Alarm Systems Installers,0.3314111868956667,Yellow
+49-3011,Aircraft Mechanics and Service Technicians,0.3268021114895138,Green
+49-3021,Automotive Body and Related Repairers,0.2211826387449267,Green
+49-3022,Automotive Glass Installers and Repairers,0.2367426884617027,Green
+49-3023,Automotive Service Technicians and Mechanics,0.293652436029412,Green
+49-3031,Bus and Truck Mechanics and Diesel Engine Specialists,0.2432716646149754,Green
+49-3041,Farm Equipment Mechanics and Service Technicians,0.2680862875708132,Green
+49-3042,"Mobile Heavy Equipment Mechanics, Except Engines",0.2346149784857876,Green
+49-3043,Rail Car Repairers,0.1927744953389904,Green
+49-3051,Motorboat Mechanics and Service Technicians,0.2921815805114611,Green
+49-3052,Motorcycle Mechanics,0.3046151964021369,Green
+49-3053,Outdoor Power Equipment and Other Small Engine Mechanics,0.2951738413845968,Green
+49-3091,Bicycle Repairers,0.2939442421129474,Green
+49-3092,Recreational Vehicle Service Technicians,0.3026374909622939,Green
+49-3093,Tire Repairers and Changers,0.1736331259644038,Green
+49-9011,Mechanical Door Repairers,0.2000612111205837,Green
+49-9012,"Control and Valve Installers and Repairers, Except Mechanical Door",0.3186894814607096,Green
+49-9021,"Heating, Air Conditioning, and Refrigeration Mechanics and Installers",0.2799242175646212,Green
+49-9031,Home Appliance Repairers,0.2879448798507718,Green
+49-9041,Industrial Machinery Mechanics,0.2505392911215007,Green
+49-9043,"Maintenance Workers, Machinery",0.2697390800763958,Green
+49-9044,Millwrights,0.210757110694609,Green
+49-9045,"Refractory Materials Repairers, Except Brickmasons",0.228011782501107,Green
+49-9051,Electrical Power-Line Installers and Repairers,0.2310063884469208,Green
+49-9052,Telecommunications Line Installers and Repairers,0.2522882199548477,Green
+49-9061,Camera and Photographic Equipment Repairers,0.5578922821447275,Yellow
+49-9062,Medical Equipment Repairers,0.3718962834986967,Yellow
+49-9063,Musical Instrument Repairers and Tuners,0.3651144545384737,Yellow
+49-9064,Watch and Clock Repairers,0.5137093791834194,Yellow
+49-9071,"Maintenance and Repair Workers, General",0.2635034474960576,Green
+49-9081,Wind Turbine Service Technicians,0.2611455045711044,Green
+49-9091,"Coin, Vending, and Amusement Machine Servicers and Repairers",0.3157116094119014,Green
+49-9092,Commercial Divers,0.246176137599509,Green
+49-9094,Locksmiths and Safe Repairers,0.298056385301185,Green
+49-9095,Manufactured Building and Mobile Home Installers,0.1861469746746935,Green
+49-9096,Riggers,0.2323797565681075,Green
+49-9097,Signal and Track Switch Repairers,0.2901841444445401,Green
+49-9098,"Helpers--Installation, Maintenance, and Repair Workers",0.180023763182032,Green
+49-9099,"Installation, Maintenance, and Repair Workers, All Other",0.3388676208938628,Yellow
+51-1011,First-Line Supervisors of Production and Operating Workers,0.4593253586566323,Yellow
+51-2011,"Aircraft Structure, Surfaces, Rigging, and Systems Assemblers",0.2853279174327049,Green
+51-2021,"Coil Winders, Tapers, and Finishers",0.3194083952463971,Green
+51-2022,Electrical and Electronic Equipment Assemblers,0.3645578362197491,Yellow
+51-2023,Electromechanical Equipment Assemblers,0.3800668548030743,Yellow
+51-2031,Engine and Other Machine Assemblers,0.2761605247688282,Green
+51-2041,Structural Metal Fabricators and Fitters,0.2448642368768439,Green
+51-2092,Team Assemblers,0.307327026897335,Green
+51-3011,Bakers,0.3860214105911017,Yellow
+51-3021,Butchers and Meat Cutters,0.2721012148630272,Green
+51-3022,"Meat, Poultry, and Fish Cutters and Trimmers",0.2553150639613643,Green
+51-3023,Slaughterers and Meat Packers,0.1242282588307562,Green
+51-3091,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",0.3183187543210237,Green
+51-3092,Food Batchmakers,0.3817404627728826,Yellow
+51-3093,Food Cooking Machine Operators and Tenders,0.3260336066595263,Green
+51-4021,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",0.2160170638036388,Green
+51-4022,"Forging Machine Setters, Operators, and Tenders, Metal and Plastic",0.3150332721415697,Green
+51-4023,"Rolling Machine Setters, Operators, and Tenders, Metal and Plastic",0.2639296297463231,Green
+51-4031,"Cutting, Punching, and Press Machine Setters, Operators, and Tenders, Metal and Plastic",0.2786621261521948,Green
+51-4032,"Drilling and Boring Machine Tool Setters, Operators, and Tenders, Metal and Plastic",0.3250397457197156,Green
+51-4033,"Grinding, Lapping, Polishing, and Buffing Machine Tool Setters, Operators, and Tenders, Metal and Plastic",0.2779913107231776,Green
+51-4034,"Lathe and Turning Machine Tool Setters, Operators, and Tenders, Metal and Plastic",0.264892855021008,Green
+51-4035,"Milling and Planing Machine Setters, Operators, and Tenders, Metal and Plastic",0.2905437869276124,Green
+51-4041,Machinists,0.2977593752920905,Green
+51-4051,Metal-Refining Furnace Operators and Tenders,0.2427805876616022,Green
+51-4052,"Pourers and Casters, Metal",0.2587734458543346,Green
+51-4061,"Model Makers, Metal and Plastic",0.3029696488100086,Green
+51-4062,"Patternmakers, Metal and Plastic",0.3429065086293201,Yellow
+51-4071,Foundry Mold and Coremakers,0.153070159044923,Green
+51-4072,"Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic",0.243278694729794,Green
+51-4081,"Multiple Machine Tool Setters, Operators, and Tenders, Metal and Plastic",0.3222919469787484,Green
+51-4111,Tool and Die Makers,0.3438709885878463,Yellow
+51-4121,"Welders, Cutters, Solderers, and Brazers",0.2660115778238174,Green
+51-4122,"Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders",0.2757161231839452,Green
+51-4191,"Heat Treating Equipment Setters, Operators, and Tenders, Metal and Plastic",0.2438517515751917,Green
+51-4192,"Layout Workers, Metal and Plastic",0.3256477835198977,Green
+51-4193,"Plating Machine Setters, Operators, and Tenders, Metal and Plastic",0.2965605109352214,Green
+51-4194,"Tool Grinders, Filers, and Sharpeners",0.3061093840597803,Green
+51-5111,Prepress Technicians and Workers,0.6385748614321075,Yellow
+51-5112,Printing Press Operators,0.3271633523939206,Green
+51-5113,Print Binding and Finishing Workers,0.2819457470232432,Green
+51-6011,Laundry and Dry-Cleaning Workers,0.2684599386439924,Green
+51-6021,"Pressers, Textile, Garment, and Related Materials",0.0858636988210909,Green
+51-6031,Sewing Machine Operators,0.2975388247323733,Green
+51-6041,Shoe and Leather Workers and Repairers,0.3059662067329698,Green
+51-6042,Shoe Machine Operators and Tenders,0.295114495674963,Green
+51-6051,"Sewers, Hand",0.3937558899629088,Yellow
+51-6052,"Tailors, Dressmakers, and Custom Sewers",0.3828652578410648,Yellow
+51-6061,Textile Bleaching and Dyeing Machine Operators and Tenders,0.2841969606878545,Green
+51-6062,"Textile Cutting Machine Setters, Operators, and Tenders",0.2648012199738073,Green
+51-6063,"Textile Knitting and Weaving Machine Setters, Operators, and Tenders",0.2574412270474924,Green
+51-6064,"Textile Winding, Twisting, and Drawing Out Machine Setters, Operators, and Tenders",0.196212915641407,Green
+51-6091,"Extruding and Forming Machine Setters, Operators, and Tenders, Synthetic and Glass Fibers",0.2977217265204068,Green
+51-6092,Fabric and Apparel Patternmakers,0.4699110727878943,Yellow
+51-6093,Upholsterers,0.2128510826234754,Green
+51-7011,Cabinetmakers and Bench Carpenters,0.2116632413022837,Green
+51-7021,Furniture Finishers,0.2225291872371071,Green
+51-7031,"Model Makers, Wood",0.3291641067831736,Green
+51-7032,"Patternmakers, Wood",0.2840465050437857,Green
+51-7041,"Sawing Machine Setters, Operators, and Tenders, Wood",0.24028698432031,Green
+51-7042,"Woodworking Machine Setters, Operators, and Tenders, Except Sawing",0.2377635528855194,Green
+51-8011,Nuclear Power Reactor Operators,0.7103999828484041,Red
+51-8012,Power Distributors and Dispatchers,0.7129002293633554,Red
+51-8013,Power Plant Operators,0.3680181264087213,Yellow
+51-8021,Stationary Engineers and Boiler Operators,0.3683131679647575,Yellow
+51-8031,Water and Wastewater Treatment Plant and System Operators,0.3758424000665751,Yellow
+51-8091,Chemical Plant and System Operators,0.3888561661263814,Yellow
+51-8092,Gas Plant Operators,0.4039751765426734,Yellow
+51-8093,"Petroleum Pump System Operators, Refinery Operators, and Gaugers",0.3790203348942171,Yellow
+51-8099,"Plant and System Operators, All Other",0.3198617163395124,Green
+51-9011,Chemical Equipment Operators and Tenders,0.3573828622590324,Yellow
+51-9012,"Separating, Filtering, Clarifying, Precipitating, and Still Machine Setters, Operators, and Tenders",0.2801307713821144,Green
+51-9021,"Crushing, Grinding, and Polishing Machine Setters, Operators, and Tenders",0.2404414293404444,Green
+51-9022,"Grinding and Polishing Workers, Hand",0.2620023574087132,Green
+51-9023,"Mixing and Blending Machine Setters, Operators, and Tenders",0.296134374654383,Green
+51-9031,"Cutters and Trimmers, Hand",0.2798958848601673,Green
+51-9032,"Cutting and Slicing Machine Setters, Operators, and Tenders",0.253466578816106,Green
+51-9041,"Extruding, Forming, Pressing, and Compacting Machine Setters, Operators, and Tenders",0.2556333741785856,Green
+51-9051,"Furnace, Kiln, Oven, Drier, and Kettle Operators and Tenders",0.2881641782977438,Green
+51-9061,"Inspectors, Testers, Sorters, Samplers, and Weighers",0.3927024844391892,Yellow
+51-9071,Jewelers and Precious Stone and Metal Workers,0.5078174029780819,Yellow
+51-9081,Dental Laboratory Technicians,0.4996970399388499,Yellow
+51-9082,Medical Appliance Technicians,0.3912825338611712,Yellow
+51-9083,Ophthalmic Laboratory Technicians,0.3739818412407162,Yellow
+51-9111,Packaging and Filling Machine Operators and Tenders,0.284369893048194,Green
+51-9123,"Painting, Coating, and Decorating Workers",0.2922159236737997,Green
+51-9141,Semiconductor Processing Technicians,0.3497388458148092,Yellow
+51-9151,Photographic Process Workers and Processing Machine Operators,0.4013384473565582,Yellow
+51-9191,Adhesive Bonding Machine Operators and Tenders,0.2092322962966994,Green
+51-9192,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",0.2552812521613638,Green
+51-9193,Cooling and Freezing Equipment Operators and Tenders,0.2764727598803027,Green
+51-9194,Etchers and Engravers,0.355753954918674,Yellow
+51-9195,"Molders, Shapers, and Casters, Except Metal and Plastic",0.2425314598741836,Green
+51-9196,"Paper Goods Machine Setters, Operators, and Tenders",0.3005150831863469,Green
+51-9197,Tire Builders,0.1517129601234308,Green
+51-9198,Helpers--Production Workers,0.2024031412657677,Green
+53-2011,"Airline Pilots, Copilots, and Flight Engineers",0.4447704398544554,Yellow
+53-2012,Commercial Pilots,0.4392754916059254,Yellow
+53-2021,Air Traffic Controllers,0.8015304489549887,Red
+53-2022,Airfield Operations Specialists,0.5433758471826524,Yellow
+53-2031,Flight Attendants,0.3527969373689892,Yellow
+53-3011,"Ambulance Drivers and Attendants, Except Emergency Medical Technicians",0.3179687628311906,Green
+53-3031,Driver/Sales Workers,0.3149938963664308,Green
+53-3032,Heavy and Tractor-Trailer Truck Drivers,0.2514421939940937,Green
+53-3033,Light Truck Drivers,0.2520745535199484,Green
+53-4011,Locomotive Engineers,0.3762900547302836,Yellow
+53-4013,"Rail Yard Engineers, Dinkey Operators, and Hostlers",0.2819262918480804,Green
+53-4031,Railroad Conductors and Yardmasters,0.3821157609858102,Yellow
+53-4041,Subway and Streetcar Operators,0.3443396271507519,Yellow
+53-5011,Sailors and Marine Oilers,0.2427532391561841,Green
+53-5021,"Captains, Mates, and Pilots of Water Vessels",0.3170896485188767,Green
+53-5022,Motorboat Operators,0.309036508834436,Green
+53-5031,Ship Engineers,0.3628854581566394,Yellow
+53-6011,Bridge and Lock Tenders,0.3524876555569451,Yellow
+53-6021,Parking Attendants,0.2947332208041307,Green
+53-6031,Automotive and Watercraft Service Attendants,0.2451552364197327,Green
+53-6041,Traffic Technicians,0.567838213046058,Yellow
+53-6051,Transportation Inspectors,0.4542310562116996,Yellow
+53-6061,Passenger Attendants,0.3994575861428594,Yellow
+53-7011,Conveyor Operators and Tenders,0.325905240701918,Green
+53-7021,Crane and Tower Operators,0.2771295380399803,Green
+53-7031,Dredge Operators,0.2736203320186195,Green
+53-7041,Hoist and Winch Operators,0.2951474322258257,Green
+53-7051,Industrial Truck and Tractor Operators,0.2221033939867726,Green
+53-7061,Cleaners of Vehicles and Equipment,0.1485631247209839,Green
+53-7062,"Laborers and Freight, Stock, and Material Movers, Hand",0.1851805422638769,Green
+53-7063,Machine Feeders and Offbearers,0.2632443691043117,Green
+53-7064,"Packers and Packagers, Hand",0.1919695017419546,Green
+53-7071,Gas Compressor and Gas Pumping Station Operators,0.3361068011830299,Yellow
+53-7072,"Pump Operators, Except Wellhead Pumpers",0.3049568609900053,Green
+53-7073,Wellhead Pumpers,0.2570713363921779,Green
+53-7081,Refuse and Recyclable Material Collectors,0.1769017908360961,Green
+53-7121,"Tank Car, Truck, and Ship Loaders",0.2093627998621277,Green

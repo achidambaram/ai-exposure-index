@@ -1,0 +1,12 @@
+{
+  "feature_columns": [
+    "raw_aei_score",
+    "mean_importance",
+    "std_importance",
+    "high_importance_count",
+    "mean_level",
+    "weighted_exposure_index",
+    "aei_score"
+  ],
+  "best_model": "rule_based"
+}
