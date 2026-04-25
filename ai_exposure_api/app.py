@@ -324,6 +324,21 @@ def _show_occupation_detail(row: pd.Series, contrib_df: pd.DataFrame, task_df: p
         )
         st.plotly_chart(fig_stack, use_container_width=True)
 
+        # Calculate mean AI overlap for this occupation to show in formulas
+        occ_contrib = contrib_df[contrib_df["soc_code"].astype(str) == str(row["soc_code"])]
+        mean_ai_overlap = occ_contrib["exposure_sigmoid"].mean() if not occ_contrib.empty else 0.0
+
+        # Compute global min/max of raw automation scores for showing min-max calc
+        _all_socs = contrib_df.groupby("soc_code")["exposure_sigmoid"].mean()
+        if TASK_AUTOMATION_FILE.exists():
+            _all_task_df = pd.read_csv(TASK_AUTOMATION_FILE)
+            _all_task_df = _all_task_df.merge(_all_socs.rename("_mean_exp").reset_index(), on="soc_code", how="inner")
+            _all_task_df["_raw"] = _all_task_df["_mean_exp"] * (0.5 + 0.5 * _all_task_df["importance_norm"])
+            _raw_min_global = _all_task_df["_raw"].min()
+            _raw_max_global = _all_task_df["_raw"].max()
+        else:
+            _raw_min_global, _raw_max_global = 0.0, 1.0
+
         # Task list grouped by automation level
         LEVEL_CONFIG = [
             ("High", "\U0001f534 Easily Automatable Tasks", "These tasks have high overlap with current AI capabilities."),
@@ -336,13 +351,58 @@ def _show_occupation_detail(row: pd.Series, contrib_df: pd.DataFrame, task_df: p
                 continue
             st.markdown(f"**{heading} ({len(level_tasks)})**")
             st.caption(explanation)
-            for _, t in level_tasks.iterrows():
+            for task_idx, (_, t) in enumerate(level_tasks.iterrows()):
                 auto_pct = t["automation_score"] * 100
-                imp_pct = t["task_importance"] / 5 * 100  # O*NET importance is 1-5 scale
-                st.markdown(
-                    f"- {t['task_description']}  \n"
-                    f"  *Automation potential: {auto_pct:.1f}% · Job importance: {imp_pct:.1f}%*"
-                )
+                imp_raw = t["task_importance"]
+                imp_pct = imp_raw / 5 * 100  # O*NET importance is 1-5 scale
+                st.markdown(f"- {t['task_description']}")
+                tc1, tc2, tc3 = st.columns([2, 2, 1.2])
+                with tc1:
+                    st.markdown(f"*Automation potential: {auto_pct:.1f}%*")
+                with tc2:
+                    st.markdown(f"*Job importance: {imp_pct:.1f}%*")
+                with tc3:
+                    with st.popover("How?", use_container_width=True):
+                        imp_norm = t.get("importance_norm", imp_raw / 5)
+                        raw_score = mean_ai_overlap * (0.5 + 0.5 * imp_norm)
+
+                        # Plain English explanation
+                        auto_level = "very high" if auto_pct > 80 else ("high" if auto_pct > 60 else ("moderate" if auto_pct > 40 else "low"))
+                        imp_level = "extremely" if imp_pct > 80 else ("very" if imp_pct > 60 else ("moderately" if imp_pct > 40 else "not very"))
+
+                        st.markdown(f"**Automation potential: {auto_pct:.1f}%**")
+                        st.markdown(
+                            f"This task has **{auto_level} automation potential**. "
+                            f"This is based on two factors:\n\n"
+                            f"1. **How exposed is this occupation to AI?** "
+                            f"On average, AI can handle about **{mean_ai_overlap * 100:.0f}%** of the abilities "
+                            f"this job requires.\n"
+                            f"2. **How important is this task within the job?** "
+                            f"O*NET rates it **{imp_raw:.2f} out of 5** — making it "
+                            f"{'the most important task' if imp_norm >= 0.99 else ('one of the more important tasks' if imp_norm > 0.5 else 'a less important task')} "
+                            f"for this role.\n\n"
+                            f"More important tasks in AI-exposed occupations get higher automation scores. "
+                            f"The score is then compared to all tasks across all 682 occupations to produce "
+                            f"the final percentage."
+                        )
+                        with st.expander("View detailed calculation"):
+                            st.markdown(
+                                f"- Average AI Overlap = {mean_ai_overlap:.4f}\n"
+                                f"- Task importance (O*NET) = {imp_raw:.2f} / 5\n"
+                                f"- Task importance (normalized within occupation) = {imp_norm:.4f}\n"
+                                f"- **Step A** — Raw score: {mean_ai_overlap:.4f} × (0.50 + 0.50 × {imp_norm:.4f}) = {raw_score:.4f}\n"
+                                f"- **Step B** — Normalized: ({raw_score:.4f} − {_raw_min_global:.4f}) ÷ ({_raw_max_global:.4f} − {_raw_min_global:.4f}) = {t['automation_score']:.4f} → {auto_pct:.1f}%"
+                            )
+
+                        st.markdown("---")
+
+                        st.markdown(f"**Job importance: {imp_pct:.1f}%**")
+                        st.markdown(
+                            f"The U.S. Department of Labor (O*NET) rates this task "
+                            f"**{imp_raw:.2f} out of 5** in importance for this role. "
+                            f"That's **{imp_level} important** — converted to a percentage: "
+                            f"{imp_raw:.2f} ÷ 5 × 100 = {imp_pct:.1f}%."
+                        )
 
     # ---- Skill-Level Breakdown --------------------------------------------
     st.markdown("---")
@@ -1209,19 +1269,26 @@ elif page == "\U00002139 How It Works":
         "skill in Step 2 of the scoring pipeline above. The average across all skills gives a single "
         "number representing how exposed the overall occupation is to AI. For Relay Technicians, "
         "the average AI Overlap across all 52 skills is **0.50**.\n"
-        "- **Task Importance** — Each task listed in O*NET has an importance rating on a 1–5 scale, "
+        "- **Task Importance (normalized)** — Each task listed in O*NET has an importance rating on a 1–5 scale, "
         "where 1 = not important and 5 = extremely important. This is separate from the *skill* importance "
         "used earlier — it rates the importance of *specific tasks* (e.g., \"Inspect equipment\") rather than "
-        "*general abilities* (e.g., \"Written Comprehension\"). We normalize this to 0–1 by dividing by 5."
+        "*general abilities* (e.g., \"Written Comprehension\"). We normalize this **within each occupation** "
+        "using min-max, so the least important task for this role becomes 0 and the most important becomes 1."
     )
 
-    st.markdown("**The formula:**")
+    st.markdown("**The formula (two steps):**")
     st.markdown(
-        "> **Task Automation Score = Average AI Overlap × (0.50 + 0.50 × Task Importance ÷ 5)**\n\n"
-        "In plain English: tasks that are more important to the job get a slightly higher "
-        "automation score, because automating important tasks has more impact. "
-        "The 50/50 split ensures that even less-important tasks still receive a meaningful "
-        "score based on the occupation's overall AI exposure."
+        "**Step A — Raw automation score:**\n"
+        "> Raw Score = Average AI Overlap × (0.50 + 0.50 × Task Importance normalized within occupation)\n\n"
+        "**Step B — Final automation score:**\n"
+        "> The raw scores are then normalized across **all tasks in all occupations** (min-max), "
+        "so the final score is on a 0–1 scale where 0 = least automatable task in the entire dataset "
+        "and 1 = most automatable.\n\n"
+        "We multiply AI Overlap by task importance because automation only has real impact when "
+        "both conditions are true — AI must be capable of the work AND the task must be a meaningful "
+        "part of the job. The (0.50 + 0.50 × importance) structure ensures even low-importance tasks "
+        "still get at least half the AI overlap score, since peripheral tasks still have some "
+        "automation potential if AI can perform them."
     )
 
     st.markdown("**Tasks are then categorized:**")
@@ -1260,30 +1327,34 @@ elif page == "\U00002139 How It Works":
         st.markdown(
             f"**Step 1:** Calculate the average AI Overlap across all {len(_relay_contrib)} skills "
             f"for Relay Technicians: **{_mean_ai_overlap:.4f}**\n\n"
-            f"**Step 2:** For each task, look up its importance rating from O*NET (1–5 scale)\n\n"
-            f"**Step 3:** Apply the formula: Automation Score = {_mean_ai_overlap:.4f} × (0.50 + 0.50 × Importance ÷ 5)"
+            f"**Step 2:** For each task, look up its importance rating from O*NET (1–5 scale) and "
+            f"normalize within this occupation using min-max (least important task → 0, most important → 1)\n\n"
+            f"**Step 3:** Calculate raw score: {_mean_ai_overlap:.4f} × (0.50 + 0.50 × importance normalized)\n\n"
+            f"**Step 4:** Normalize raw scores across all tasks in all occupations (min-max) → final automation score"
         )
 
         # Build the table with inline calculations
-        _task_display = _task_data[["task_description", "task_importance", "automation_score", "automation_level"]].copy()
-        _task_display["→ Automation Score calc"] = _task_data.apply(
-            lambda r: f"{_mean_ai_overlap:.4f} × (0.50 + 0.50 × {r['task_importance']:.2f} ÷ 5) = {r['automation_score']:.4f}", axis=1
+        _task_display = _task_data[["task_description", "task_importance", "importance_norm", "automation_score", "automation_level"]].copy()
+        _task_display["→ Raw Score calc"] = _task_data.apply(
+            lambda r: f"{_mean_ai_overlap:.4f} × (0.50 + 0.50 × {r['importance_norm']:.4f}) = {_mean_ai_overlap * (0.5 + 0.5 * r['importance_norm']):.4f}", axis=1
         )
 
-        _task_table = _task_display[["task_description", "task_importance", "→ Automation Score calc", "automation_level"]].copy()
-        _task_table.columns = ["Task", "Importance (O*NET, 1–5)", "→ Automation Score calculation", "→ Category"]
+        _task_table = _task_display[["task_description", "task_importance", "importance_norm", "→ Raw Score calc", "automation_score", "automation_level"]].copy()
+        _task_table.columns = ["Task", "Importance (O*NET, 1–5)", "Importance (normalized)", "→ Raw Score calculation", "→ Final Score (after global normalization)", "→ Category"]
         st.dataframe(
             _task_table.style.format({
                 "Importance (O*NET, 1–5)": "{:.2f}",
+                "Importance (normalized)": "{:.4f}",
+                "→ Final Score (after global normalization)": "{:.4f}",
             }),
             use_container_width=True,
             hide_index=True,
         )
         st.caption(
-            "Tasks with higher importance ratings get slightly higher automation scores because "
-            "the formula scales them up. But all tasks share the same Average AI Overlap — "
-            "so the occupation's overall AI exposure is the primary driver, "
-            "while task importance provides a secondary adjustment."
+            "The 'Importance (normalized)' column shows the min-max normalization within this occupation — "
+            "the most important task becomes 1.0 and the least important becomes 0.0. "
+            "The 'Final Score' column is the raw score normalized again across all tasks in all 682 occupations, "
+            "which is why the final values differ from the raw calculation."
         )
     else:
         st.caption("Task automation data not available for this example.")
