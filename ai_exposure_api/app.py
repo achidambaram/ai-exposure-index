@@ -329,6 +329,7 @@ def _show_occupation_detail(row: pd.Series, contrib_df: pd.DataFrame, task_df: p
         mean_ai_overlap = occ_contrib["exposure_sigmoid"].mean() if not occ_contrib.empty else 0.0
 
         # Compute global min/max of raw automation scores for showing min-max calc
+        # Compute global min/max of raw automation scores for showing min-max calc
         _all_socs = contrib_df.groupby("soc_code")["exposure_sigmoid"].mean()
         if TASK_AUTOMATION_FILE.exists():
             _all_task_df = pd.read_csv(TASK_AUTOMATION_FILE)
@@ -385,14 +386,37 @@ def _show_occupation_detail(row: pd.Series, contrib_df: pd.DataFrame, task_df: p
                             f"The score is then compared to all tasks across all 682 occupations to produce "
                             f"the final percentage."
                         )
-                        with st.expander("View detailed calculation"):
-                            st.markdown(
-                                f"- Average AI Overlap = {mean_ai_overlap:.4f}\n"
-                                f"- Task importance (O*NET) = {imp_raw:.2f} / 5\n"
-                                f"- Task importance (normalized within occupation) = {imp_norm:.4f}\n"
-                                f"- **Step A** — Raw score: {mean_ai_overlap:.4f} × (0.50 + 0.50 × {imp_norm:.4f}) = {raw_score:.4f}\n"
-                                f"- **Step B** — Normalized: ({raw_score:.4f} − {_raw_min_global:.4f}) ÷ ({_raw_max_global:.4f} − {_raw_min_global:.4f}) = {t['automation_score']:.4f} → {auto_pct:.1f}%"
+                        # Detailed calculation section
+                        st.markdown("---")
+                        st.caption("Detailed calculation")
+
+                        # Explain what min-max means in context for this specific task
+                        if t['automation_score'] >= 0.99:
+                            step_b_note = (
+                                f"This task's raw score ({raw_score:.4f}) equals the **highest** raw score "
+                                f"across all 11,657 tasks in the dataset — so after min-max normalization it becomes 1.0 (100%). "
+                                f"This means it is the most automatable task relative to all other tasks."
                             )
+                        elif t['automation_score'] <= 0.01:
+                            step_b_note = (
+                                f"This task's raw score ({raw_score:.4f}) equals the **lowest** raw score "
+                                f"across all 11,657 tasks in the dataset — so after min-max normalization it becomes 0.0 (0%). "
+                                f"This means it is the least automatable task relative to all other tasks."
+                            )
+                        else:
+                            step_b_note = (
+                                f"The raw score ({raw_score:.4f}) is placed on a scale between the lowest ({_raw_min_global:.4f}) "
+                                f"and highest ({_raw_max_global:.4f}) raw scores across all 11,657 tasks in the dataset."
+                            )
+
+                        st.markdown(
+                            f"- Average AI Overlap = {mean_ai_overlap:.4f}\n"
+                            f"- Task importance (O*NET) = {imp_raw:.2f} / 5\n"
+                            f"- Task importance (normalized within occupation) = {imp_norm:.4f}\n"
+                            f"- **Step A** — Raw score: {mean_ai_overlap:.4f} × (0.50 + 0.50 × {imp_norm:.4f}) = {raw_score:.4f}\n"
+                            f"- **Step B** — Min-max: ({raw_score:.4f} − {_raw_min_global:.4f}) ÷ ({_raw_max_global:.4f} − {_raw_min_global:.4f}) = {t['automation_score']:.4f} → {auto_pct:.1f}%\n\n"
+                            f"{step_b_note}"
+                        )
 
                         st.markdown("---")
 
@@ -1281,7 +1305,7 @@ elif page == "\U00002139 How It Works":
         "**Step A — Raw automation score:**\n"
         "> Raw Score = Average AI Overlap × (0.50 + 0.50 × Task Importance normalized within occupation)\n\n"
         "**Step B — Final automation score:**\n"
-        "> The raw scores are then normalized across **all tasks in all occupations** (min-max), "
+        "> The raw scores are then normalized across **all tasks in all occupations** using min-max, "
         "so the final score is on a 0–1 scale where 0 = least automatable task in the entire dataset "
         "and 1 = most automatable.\n\n"
         "We multiply AI Overlap by task importance because automation only has real impact when "
@@ -1324,28 +1348,40 @@ elif page == "\U00002139 How It Works":
         _relay_contrib = contributions[contributions["soc_code"].astype(str) == "49-2095"]
         _mean_ai_overlap = _relay_contrib["exposure_sigmoid"].mean()
 
+        # Compute global min/max for showing min-max calc in the example
+        _all_task_ex = _all_tasks.copy()
+        _all_socs_ex = contributions.groupby("soc_code")["exposure_sigmoid"].mean()
+        _all_task_ex = _all_task_ex.merge(_all_socs_ex.rename("_mean_exp").reset_index(), on="soc_code", how="inner")
+        _all_task_ex["_raw"] = _all_task_ex["_mean_exp"] * (0.5 + 0.5 * _all_task_ex["importance_norm"])
+        _ex_raw_min = _all_task_ex["_raw"].min()
+        _ex_raw_max = _all_task_ex["_raw"].max()
+
         st.markdown(
             f"**Step 1:** Calculate the average AI Overlap across all {len(_relay_contrib)} skills "
             f"for Relay Technicians: **{_mean_ai_overlap:.4f}**\n\n"
             f"**Step 2:** For each task, look up its importance rating from O*NET (1–5 scale) and "
             f"normalize within this occupation using min-max (least important task → 0, most important → 1)\n\n"
             f"**Step 3:** Calculate raw score: {_mean_ai_overlap:.4f} × (0.50 + 0.50 × importance normalized)\n\n"
-            f"**Step 4:** Normalize raw scores across all tasks in all occupations (min-max) → final automation score"
+            f"**Step 4:** Normalize raw scores across all tasks in all occupations (min-max) → final automation score "
+            f"(min = {_ex_raw_min:.4f}, max = {_ex_raw_max:.4f})"
         )
 
         # Build the table with inline calculations
         _task_display = _task_data[["task_description", "task_importance", "importance_norm", "automation_score", "automation_level"]].copy()
-        _task_display["→ Raw Score calc"] = _task_data.apply(
-            lambda r: f"{_mean_ai_overlap:.4f} × (0.50 + 0.50 × {r['importance_norm']:.4f}) = {_mean_ai_overlap * (0.5 + 0.5 * r['importance_norm']):.4f}", axis=1
+        _task_display["_raw"] = _task_data["importance_norm"].apply(lambda n: _mean_ai_overlap * (0.5 + 0.5 * n))
+        _task_display["→ Raw Score calc"] = _task_display.apply(
+            lambda r: f"{_mean_ai_overlap:.4f} × (0.50 + 0.50 × {r['importance_norm']:.4f}) = {r['_raw']:.4f}", axis=1
+        )
+        _task_display["→ Final Score calc"] = _task_display.apply(
+            lambda r: f"({r['_raw']:.4f} − {_ex_raw_min:.4f}) ÷ ({_ex_raw_max:.4f} − {_ex_raw_min:.4f}) = {r['automation_score']:.4f}", axis=1
         )
 
-        _task_table = _task_display[["task_description", "task_importance", "importance_norm", "→ Raw Score calc", "automation_score", "automation_level"]].copy()
-        _task_table.columns = ["Task", "Importance (O*NET, 1–5)", "Importance (normalized)", "→ Raw Score calculation", "→ Final Score (after global normalization)", "→ Category"]
+        _task_table = _task_display[["task_description", "task_importance", "importance_norm", "→ Raw Score calc", "→ Final Score calc", "automation_level"]].copy()
+        _task_table.columns = ["Task", "Importance (O*NET, 1–5)", "Importance (normalized)", "→ Step A: Raw Score", "→ Step B: Final Score (min-max)", "→ Category"]
         st.dataframe(
             _task_table.style.format({
                 "Importance (O*NET, 1–5)": "{:.2f}",
                 "Importance (normalized)": "{:.4f}",
-                "→ Final Score (after global normalization)": "{:.4f}",
             }),
             use_container_width=True,
             hide_index=True,
@@ -1353,8 +1389,8 @@ elif page == "\U00002139 How It Works":
         st.caption(
             "The 'Importance (normalized)' column shows the min-max normalization within this occupation — "
             "the most important task becomes 1.0 and the least important becomes 0.0. "
-            "The 'Final Score' column is the raw score normalized again across all tasks in all 682 occupations, "
-            "which is why the final values differ from the raw calculation."
+            "The 'Final Score' column is the raw score normalized across all tasks in all 682 occupations "
+            "using min-max, which is why the final values differ from the raw calculation."
         )
     else:
         st.caption("Task automation data not available for this example.")
